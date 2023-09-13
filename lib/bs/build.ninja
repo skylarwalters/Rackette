@@ -1,0 +1,29 @@
+rescript = 1
+rule astj
+  command = '/Users/skylarwalters/Desktop/cs17 but like the one i made/cs17reason/rackette-errorless/node_modules/bs-platform/darwin/bsc.exe'  -warn-error +101 -bs-v 9.0.2  -absname -bs-ast -o $out $i
+o src/Demo.ast : astj ../../src/Demo.re
+rule deps
+  command = '/Users/skylarwalters/Desktop/cs17 but like the one i made/cs17reason/rackette-errorless/node_modules/bs-platform/darwin/bsb_helper.exe' -hash b75979cb4a4739becfc20509b7ff3926 -bs-ns RacketteErrorless $in
+  restat = 1
+o src/Demo.d : deps src/Demo.ast
+rule mij
+  command = '/Users/skylarwalters/Desktop/cs17 but like the one i made/cs17reason/rackette-errorless/node_modules/bs-platform/darwin/bsc.exe' -bs-ns RacketteErrorless -I . -I src   -warn-error +101 -bs-package-name rackette-errorless -bs-package-output commonjs:$in_d:.bs.js $i
+  dyndep = 1
+  restat = 1
+o src/Demo-RacketteErrorless.cmj src/Demo-RacketteErrorless.cmi ../../src/Demo.bs.js : mij src/Demo.ast
+o src/Read.ast : astj ../../src/Read.re
+o src/Read.d : deps src/Read.ast
+o src/Read-RacketteErrorless.cmj src/Read-RacketteErrorless.cmi ../../src/Read.bs.js : mij src/Read.ast
+o src/Types.ast : astj ../../src/Types.re
+o src/Types.d : deps src/Types.ast
+o src/Types-RacketteErrorless.cmj src/Types-RacketteErrorless.cmi ../../src/Types.bs.js : mij src/Types.ast
+o src/Rackette.ast : astj ../../src/Rackette.re
+o src/Rackette.d : deps src/Rackette.ast
+o src/Rackette-RacketteErrorless.cmj src/Rackette-RacketteErrorless.cmi ../../src/Rackette.bs.js : mij src/Rackette.ast
+o src/CS17SetupRackette.ast : astj ../../src/CS17SetupRackette.re
+o src/CS17SetupRackette.d : deps src/CS17SetupRackette.ast
+o src/CS17SetupRackette-RacketteErrorless.cmj src/CS17SetupRackette-RacketteErrorless.cmi ../../src/CS17SetupRackette.bs.js : mij src/CS17SetupRackette.ast
+rule build_package
+  command = '/Users/skylarwalters/Desktop/cs17 but like the one i made/cs17reason/rackette-errorless/node_modules/bs-platform/darwin/bsc.exe' -w -49 -color always -no-alias-deps  $i
+  restat = 1
+o RacketteErrorless.cmi : build_package RacketteErrorless.mlmap

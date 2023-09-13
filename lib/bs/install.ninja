@@ -1,0 +1,29 @@
+rescript = 1
+rule cp
+  command = cp $i $out
+rule touch
+ command = touch $out
+o Demo-RacketteErrorless.cmi : cp ../bs/src/Demo-RacketteErrorless.cmi
+o Demo-RacketteErrorless.cmj : cp ../bs/src/Demo-RacketteErrorless.cmj
+o Demo-RacketteErrorless.cmt : cp ../bs/src/Demo-RacketteErrorless.cmt
+o Demo.re : cp ../../src/Demo.re
+o Read-RacketteErrorless.cmi : cp ../bs/src/Read-RacketteErrorless.cmi
+o Read-RacketteErrorless.cmj : cp ../bs/src/Read-RacketteErrorless.cmj
+o Read-RacketteErrorless.cmt : cp ../bs/src/Read-RacketteErrorless.cmt
+o Read.re : cp ../../src/Read.re
+o Types-RacketteErrorless.cmi : cp ../bs/src/Types-RacketteErrorless.cmi
+o Types-RacketteErrorless.cmj : cp ../bs/src/Types-RacketteErrorless.cmj
+o Types-RacketteErrorless.cmt : cp ../bs/src/Types-RacketteErrorless.cmt
+o Types.re : cp ../../src/Types.re
+o Rackette-RacketteErrorless.cmi : cp ../bs/src/Rackette-RacketteErrorless.cmi
+o Rackette-RacketteErrorless.cmj : cp ../bs/src/Rackette-RacketteErrorless.cmj
+o Rackette-RacketteErrorless.cmt : cp ../bs/src/Rackette-RacketteErrorless.cmt
+o Rackette.re : cp ../../src/Rackette.re
+o CS17SetupRackette-RacketteErrorless.cmi : cp ../bs/src/CS17SetupRackette-RacketteErrorless.cmi
+o CS17SetupRackette-RacketteErrorless.cmj : cp ../bs/src/CS17SetupRackette-RacketteErrorless.cmj
+o CS17SetupRackette-RacketteErrorless.cmt : cp ../bs/src/CS17SetupRackette-RacketteErrorless.cmt
+o CS17SetupRackette.re : cp ../../src/CS17SetupRackette.re
+o RacketteErrorless.cmi : cp ../bs/RacketteErrorless.cmi
+o RacketteErrorless.cmj : cp ../bs/RacketteErrorless.cmj
+o RacketteErrorless.cmt : cp ../bs/RacketteErrorless.cmt
+build install.stamp : touch Demo-RacketteErrorless.cmi Demo-RacketteErrorless.cmj Read-RacketteErrorless.cmi Read-RacketteErrorless.cmj Types-RacketteErrorless.cmi Types-RacketteErrorless.cmj Rackette-RacketteErrorless.cmi Rackette-RacketteErrorless.cmj CS17SetupRackette-RacketteErrorless.cmi CS17SetupRackette-RacketteErrorless.cmj RacketteErrorless.cmi RacketteErrorless.cmj
